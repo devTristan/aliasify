@@ -26,7 +26,11 @@ module.exports = transformTools.makeRequireTransform "aliasify", {jsFilesOnly: t
     regexps = opts.config.replacements
     verbose = opts.config.verbose
 
-    configDir = opts.configData?.configDir or opts.config.configDir or process.cwd()
+    inSubModule = opts.file.indexOf(opts.configData?.configDir + '/node_modules/') == 0
+    if inSubModule
+      configDir = path.dirname(opts.file)
+    else
+      configDir = opts.configData?.configDir or opts.config.configDir or process.cwd()
 
     result = null
 

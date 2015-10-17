@@ -1,6 +1,6 @@
 {
-  "name": "aliasify",
-  "version": "1.8.0",
+  "name": "aliasify-tristan",
+  "version": "1.8.2",
   "description": "Rewrite require calls in browserify modules.",
   "main": "./lib/aliasify.js",
   "repository": {
